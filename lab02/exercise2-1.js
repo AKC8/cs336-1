@@ -25,7 +25,7 @@ Person.prototype.setName = function(name) {
 
 // Return a greeting for a person
 Person.prototype.greet = function() {
-  return "I'm a student";
+  return "I'm a person";
 };
 
 Person.prototype.addFriend = function(friend) {
@@ -33,19 +33,28 @@ Person.prototype.addFriend = function(friend) {
   return this.friends;
 };
 
+function arrayAssert(array1, array2) {
+  console.assert(array1.length === array2.length);
+  for (var i = 0; i < array1.length; i++) {
+    console.assert(array1[i], array2[i]);
+  }
+}
+
 const person1 = new Person('Markus Wissink', '12/11/1997', []);
-console.log(person1.getAge());
-console.log(person1.greet());
-console.log(person1.name);
+console.assert(person1.greet() === "I'm a person");
+console.assert(person1.name === 'Markus Wissink');
 person1.setName('Mark Wissink');
-console.log(person1.name);
+console.assert(person1.name === 'Mark Wissink');
 
-const person2 = new Person('Clark Wissink', '11/01/1996', [person1]);
-console.log(person2.getAge());
-console.log(person2.greet());
-console.log(person2.friends);
+const person2 = new Person('Clark Wissink', '11/01/1995', [person1]);
+console.assert(person2.getAge() > person1.getAge());
+console.assert(person2.greet() === "I'm a person");
+arrayAssert(person2.friends, [person1]);
 
-const person3 = new Person('Stark Wissink', '03/15/1990', [person1]);
-console.log(person3.addFriend(person2));
+const person3 = new Person('Stark Wissink', '03/15/1993', [person1]);
+console.assert(person3.getAge() > person2.getAge());
+arrayAssert(person3.friends, [person1]);
+person3.addFriend(person2);
+arrayAssert(person3.friends, [person1, person2]);
 
 module.exports = Person;

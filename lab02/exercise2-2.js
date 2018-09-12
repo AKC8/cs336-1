@@ -13,12 +13,12 @@ Student.prototype.greet = function() {
 };
 
 const student1 = new Student('Mark Wissink', '12/11/1997', [], 'Computer Science');
-console.log(student1.getAge());
-console.log(student1.greet());
-console.log(student1.subject);
+console.assert(student1.greet() === "I'm a student");
+console.assert(student1.subject === 'Computer Science');
 
 const person1 = new Person('Clark Wissink', '1/1/1990', []);
-console.log(student1 instanceof Person);
-console.log(student1 instanceof Student);
-console.log(person1 instanceof Person);
-console.log(person1 instanceof Student);
+console.assert(student1.getAge() < person1.getAge());
+console.assert(student1 instanceof Person === true);
+console.assert(student1 instanceof Student === true);
+console.assert(person1 instanceof Person === true);
+console.assert(person1 instanceof Student === false);
