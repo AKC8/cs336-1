@@ -18,6 +18,11 @@ Person.prototype.getAge = function() {
   return age;
 };
 
+// Mutator for the
+Person.prototype.setName = function(name) {
+  this.name = name;
+}
+
 // Return a greeting for a person
 Person.prototype.greet = function() {
   return "I'm a student";
@@ -28,9 +33,12 @@ Person.prototype.addFriend = function(friend) {
   return this.friends;
 };
 
-const person1 = new Person('Mark Wissink', '12/11/1997', []);
+const person1 = new Person('Markus Wissink', '12/11/1997', []);
 console.log(person1.getAge());
 console.log(person1.greet());
+console.log(person1.name);
+person1.setName('Mark Wissink');
+console.log(person1.name);
 
 const person2 = new Person('Clark Wissink', '11/01/1996', [person1]);
 console.log(person2.getAge());
