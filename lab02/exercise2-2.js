@@ -2,7 +2,7 @@ var Person = require('./exercise2-1');
 
 // Student
 function Student(name, birthdate, friends, subject) {
-  Person(this, name, birthdate, friends);
+  Person.call(this, name, birthdate, friends);
   this.subject = subject;
 };
 
