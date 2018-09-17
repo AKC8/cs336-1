@@ -1,0 +1,15 @@
+{
+  "name": "lab03",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Mark Wissink",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
