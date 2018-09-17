@@ -8,6 +8,10 @@
     "start": "node app.js"
   },
   "author": "Mark Wissink",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcwissink/cs336.git"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
