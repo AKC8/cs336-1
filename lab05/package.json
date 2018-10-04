@@ -1,0 +1,16 @@
+{
+  "name": "lab05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "stylus style.sty --out ./public && nodemon index.js"
+  },
+  "author": "Mark Wissink",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "stylus": "^0.54.5"
+  }
+}
