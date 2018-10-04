@@ -1,6 +1,12 @@
+// Padding that is reused in multiple elements
 box-padding = 20px
+
+// Common border style
 box-border = 1px solid black
+
+// Defines properties that are shared between the nav and aside
 side-box-flex = 1 6 20%
+side-box-color = #ccccff
 
 body {
     font: 24px Helvetica
@@ -21,7 +27,7 @@ body {
         nav {
             padding: box-padding
             border: box-border
-            background: #ccccff
+            background: side-box-color
             text-align: right
             flex: side-box-flex
             order: 1
@@ -29,7 +35,7 @@ body {
         aside {
             padding: box-padding
             border: box-border
-            background: #ccccff
+            background: side-box-color
             flex: side-box-flex
             order: 3
         }
@@ -48,7 +54,7 @@ header, footer {
     background: #ffeebb
 }
 
-/* Too narrow to support three columns */
+// Too narrow to support three columns
 @media all and (max-width: 640px) {
   body {
     #main {
