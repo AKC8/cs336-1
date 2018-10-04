@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "stylus style.sty --out ./public && nodemon index.js"
+    "start": "stylus -c style.sty --out ./public && nodemon index.js"
   },
   "author": "Mark Wissink",
   "license": "ISC",
