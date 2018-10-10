@@ -13,4 +13,4 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501
 
 Exercise 6.2
 a. HTML forms only support POST and GET
-b. The data is converted into the standard JSON format.
+b. The data is converted into the standard JSON format. The data is stringified
