@@ -1,0 +1,11 @@
+a. Chrome - HTTP GET is the only accessible method
+curl - all HTTP methods can be handled with curl
+Using curl, I successfully used
+  -POST
+  -PUT
+  -GET
+  -DELETE
+  -HEAD - did not follow the format of the given command format
+
+b. HTTP 501 - Not Implemented is the most appropriate since the requests are not handled
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501
