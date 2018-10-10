@@ -1,3 +1,4 @@
+Exercise 6.1
 a. Chrome - HTTP GET is the only accessible method
 curl - all HTTP methods can be handled with curl
 Using curl, I successfully used
@@ -5,7 +6,11 @@ Using curl, I successfully used
   -PUT
   -GET
   -DELETE
-  -HEAD - did not follow the format of the given command format
+  -HEAD - did not follow the format of the given command format, but worked when properly formatted
 
 b. HTTP 501 - Not Implemented is the most appropriate since the requests are not handled
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501
+
+Exercise 6.2
+a. HTML forms only support POST and GET
+b. The data is converted into the standard JSON format.
