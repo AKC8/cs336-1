@@ -50,7 +50,7 @@ const people = [
 app.get('/people', (req, res) => res.json(people))
     .post('/people', (req, res) => {
 	// Make sure the loginId is unique
-	for (let person in people) {
+	for (let person of people) {
 	    if (person.loginId === req.body.loginId) {
 		res.sendStatus(400);
 		return;
