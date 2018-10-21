@@ -1,0 +1,24 @@
+{
+  "name": "homework01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcwissink/cs336.git"
+  },
+  "author": "Mark Wissink",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcwissink/cs336/issues"
+  },
+  "homepage": "https://github.com/mcwissink/cs336#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
