@@ -3,12 +3,13 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="script.js"></script>
+    <script src="add_script.js"></script>
     <meta charset="utf-8">
     <title>Add Person</title>
   </head>
-  <body> 
-    <form id="form" action="/people" method="post">
+  <body>
+    <a href="/getPerson.html">Get Person</a>
+    <form action="/people" method="post">
       <div>
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="firstName">
@@ -27,7 +28,7 @@
       </div>
       <div class="button">
         <button type="submit">Add Person</button>
-	<span id="result"></span>
+	<span id="status"></span>
       </div>
     </form>
   </body>

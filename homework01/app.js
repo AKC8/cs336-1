@@ -15,7 +15,7 @@ const getYear = (startDate) => {
 }
 
 // A helper function for finding a person and sending not found status
-const findPerson = (req, id) => {
+const findPerson = (res, id) => {
   const person = people.find(person => person.loginID === id);
   if (person === undefined) {
     res.sendStatus(404);
@@ -43,21 +43,21 @@ const people = [
 app.get('/people', (req, res) => res.json(people));
 
 app.get('/person/:id', (req, res) => {
-  const person = findPerson(req, req.params.id);
+  const person = findPerson(res, req.params.id);
   if (person !== undefined) {
     res.json(person);
   }
 });
 
 app.get('/person/:id/name', (req, res) => {
-  const person = findPerson(req, req.params.id);
+  const person = findPerson(res, req.params.id);
   if (person !== undefined) {
     res.json(`${person.firstName} ${person.lastName}`);
   }
 });
 
 app.get('/person/:id/year', (req, res) => {
-  const person = findPerson(req, req.params.id);
+  const person = findPerson(res, req.params.id);
   if (person !== undefined) {
     res.json(getYear(person.startDate));
   }

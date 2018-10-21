@@ -1,6 +1,7 @@
+
 $(document).ready(function() {
-    let form = $("#form");
-    let result = $("#result");
+    let form = $("form");
+    let result = $("#status");
     form.change(function() {
 	result.text("");
     });

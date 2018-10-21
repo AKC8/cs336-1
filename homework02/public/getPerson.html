@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="get_script.js"></script>
+    <meta charset="utf-8">
+    <title>Get Person</title>
+  </head>
+  <body>
+    <a href="/addPerson.html">Add Person</a>
+    <form action="/person" method="get">
+      <div>
+        <label for="login_id">Login ID:</label>
+        <input id="login_id" name="loginId"></input>
+      </div>
+      <div class="button">
+        <button type="submit">Get Person</button>
+      </div>
+    </form>
+    <div id="result"></div>
+  </body>
+</html>
