@@ -1,0 +1,21 @@
+a.i. A React component is a reusable function or class that encapsulates and renders a chunk of JSX. Components can be composed of other components, allowing for a robust UI system.
+    Components can separate and organize the logic of an application; this hopefully results in clean and DRY code.
+    https://reactjs.org/docs/components-and-props.html
+  ii. JSX is a syntax extension of JavaScript which lets a programmer express HTML/XML tags as code. JSX joins the program logic with the UI logic in a way that is intuitive to a programmer.
+    https://reactjs.org/docs/introducing-jsx.html
+  iii. The React DOM will escape any values that are in JSX. This prevents XSS since everything is sanitized and converted to a string before rendering.
+    https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks
+  iv. Data flow is unidirectional is React. The data always flows down through components, never up. A parent is responsible for it's children, and it must provide any necessary data or functions
+    that a child would need to display. In the lab, comments are loaded in the CommentBox, and they are passed down to the CommentList, which in turn, passes individual comments into the Comment component.
+    Comments are created in the CommentForm, which sends data to the server through a function provided by CommentBox. Comments are saved on the server where they are retrieved by CommentBox.
+  v. Props are how data is passed down through components, and state is how components can make local changes to data. Both props and state should be treated as immutable.
+    If props or state are not treated as immutable objects, React will not be able to properly display the changes. This is especially important when arrays or other objects are stored in state.
+    React encourages using packages such as immutability-helper for properly modifying state
+    https://github.com/kolodny/immutability-helper
+    https://reactjs.org/docs/react-component.html#state
+
+b.i. The comment no longer exists so it is not displayed. And if the server is running while the comment.json is modified, the comment will disappear from the webpage when the server sends the updated comment list to the client
+  ii. CommentBox is not responsible for rendering the comments from the server. It simply passes the data down to CommentList and lets CommentList handle the display of comments.
+  iii. Components represent the current state of the view so that there is no ambiguous or undefined behavior. If the current state was not reflected in the components, it would be confusing for the client and difficult to debug for the programmer.
+  iv. Optimistic updates is used to provide a better user experience. It assumes that for the majority of updates, if the data on the client is valid then the server will most likely be able to accept it.
+    The data is displayed on the client even before the server receives and processes the comment. Worst case scenario, which should be rare, is that the server should respond with an error and make the user resubmit or update their data.
