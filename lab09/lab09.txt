@@ -1,0 +1,2 @@
+a. The bundling, at this point, doesn't do anything except consildated files into one directory. The total size of dist is 20k while the app is 28k, so there is a small reduction in size.
+b.
