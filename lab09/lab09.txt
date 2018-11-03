@@ -1,2 +1,16 @@
-a. The bundling, at this point, doesn't do anything except consildated files into one directory. The total size of dist is 20k while the app is 28k, so there is a small reduction in size.
-b.
+Exercise 9.1
+a. The bundling, at this point, doesn't do anything except consildated files into one directory. The total size of the dist directory is 20KB while the app is 28KB, so there is a small reduction in size.
+b. Webpack compiles React and JavaScript to ES5 so that it can properly run browsers.
+c. When trying to load the html file locally, it fails to locate the bundle.js since the path is not relative to the directory. The application is not properly bundled so it can't run
+d. Webpack preprocesses .jsx files with babel-loader so that a browser can properly interpret the code.
+
+Exercise 9.2
+a. The new dist directory is 1.1MB, with the index.html being only 1KB of that total size. Much larger than before
+b. With all the libraries in the bundle.js, clients no longer have to make extra requests for other libraries and dependencies, it's all bundled in one request.
+c. Only the index.html and bundle.js are loaded. The CSS file is represented as a string in the bundle.js
+
+Exercise 9.3
+a. When making changes to the SPA. The localhost:3001 is automatically refreshed with the new bundle/index files.
+   Changing the SPA does not cause the localhost:3000 to refresh it's contents
+
+b. For a development environment, the praticality of webpack can be debatable. Simply getting webpack properly configured can be a hassle, so sometimes for development it's better to just work with what you have. However, for a production environment, tools like webpack are much more essential

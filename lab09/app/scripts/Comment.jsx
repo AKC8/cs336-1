@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = React.createClass({
+export const Comment = React.createClass({
   render: function() {
     return (
       <div className="comment">

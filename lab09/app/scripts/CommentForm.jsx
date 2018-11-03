@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommentForm = React.createClass({
+export const CommentForm = React.createClass({
   getInitialState: function() {
     return {author: '', text: ''};
   },

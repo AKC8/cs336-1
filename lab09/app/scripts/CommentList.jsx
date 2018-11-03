@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Comment from './Comment';
+import {Comment} from './Comment.jsx';
 
-const CommentList = React.createClass({
+export const CommentList = React.createClass({
   render: function() {
     const commentNodes = this.props.data.map(function(comment) {
       return (
