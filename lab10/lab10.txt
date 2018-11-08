@@ -1,0 +1,8 @@
+Exercise 10.1
+a. MongoDB is NoSQL, which is the obvious and main difference. Performing CRUD operations are more similar to making functions calls, while a SQL database requires queries. There isn't really anything in one that you can't do in the other, but the methods of doing those things will be different.
+
+b. Running MongoDB locally allows a developer to work offline. You also don't have to rely worry about the database provider going down or something bad like that. A disadvantage would be that if my computer broke, the database could be lost, and all the test data would have to be remade. Another disadvantage would that only the local machine could be used for development.
+
+c. The sandbox could not be used for production since there really enough storage. Unless the collections were small and stayed small, using mLab in production wouldn't be a good idea. It also may not be able to handle high amount of traffic.
+
+Exercise 10.2
