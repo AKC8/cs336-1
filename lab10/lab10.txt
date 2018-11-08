@@ -6,3 +6,8 @@ b. Running MongoDB locally allows a developer to work offline. You also don't ha
 c. The sandbox could not be used for production since there really enough storage. Unless the collections were small and stayed small, using mLab in production wouldn't be a good idea. It also may not be able to handle high amount of traffic.
 
 Exercise 10.2
+a. I needed to run the full Webpack development environment. The browser couldn't run my SPA when I just ran my project with node.
+
+b. Since I'm repeating the GET request every 2 seconds, I see the changes in my client a few moments after modifying the data on the server.
+
+c. I would say for simplicity of my application, a noSQL database works well. It's quite easy to get a noSQL database running since I don't have to design and implement a schema.
