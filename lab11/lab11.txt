@@ -1,3 +1,22 @@
+Exercise 11.1
 a. Compare and contrast your development and production deployments and explain how each is designed.
 
+A development environment, as expected, makes development easier. This means features like hot reloading and a local server. Production on the other hand, utilizes
+plugins like OccurenceOrderPlugin and UglifyJsPlugin which properly condense code for a more appropriate production product. The server does not live in the local
+machine for production.
+
 b. List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the deployed application files.
+
+OccurenceOrderPlugin, UglifyJsPlugin, ExtractTextPlugin, and autoprefixer where added as optimizations for the production bundle. The only obvious optimization
+that I can see in the bundle is the UglifyJsPlugin since all the JavaScript is unreadable.
+
+Exercise 11.2
+a. What advantage is there is deploying an application to a PaaS tool like Heroku?
+
+The obvious benefit is that the free option allows you to test your app in production. Another benefit is that you can offload all the server optimizations of to
+the PaaS, the server performance is no longer your responsibility and you can get the performance you need as long as you have enough money. This also comes with
+downfalls since you now rely on Heroku to be consistent with their service.
+
+b. How does Heroku know how to install and run your application (after pulling it from the specified branch on GitHub)?
+
+They have a configured a Node environment that runs the default npm scripts such as build. 
