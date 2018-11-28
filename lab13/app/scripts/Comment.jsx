@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export const Comment = React.createClass({
   render: function() {
@@ -8,6 +9,7 @@ export const Comment = React.createClass({
           {this.props.author}
         </h2>
         {this.props.children}
+        <Link style={{ display: 'block'}} to={'/' + this.props.id}>Edit</Link>
       </div>
     );
   }

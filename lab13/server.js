@@ -17,10 +17,10 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var APP_PATH = path.join(__dirname, 'dist');
-var MongoClient = require('mongodb').MongoClient;
+var mongo = require('mongodb');
 var db;
 
-MongoClient.connect(`mongodb://cs336:${process.env.MONGO_PASSWORD}@ds151463.mlab.com:51463/cs336`, function (err, client) {
+mongo.MongoClient.connect(`mongodb://cs336:${process.env.MONGO_PASSWORD}@ds151463.mlab.com:51463/cs336`, function (err, client) {
   if (err) throw err
 
   db = client;
@@ -76,5 +76,16 @@ app.post('/api/comments', function(req, res) {
   });
 });
 
+api.get('/api/comments/:id', function(req, res) {
+  db.collection('comments').find({
+    _id: new mongo.ObjectID(req.params.id)
+  }, function(err, data) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    res.json(data);
+  })
+})
 
 app.use('*', express.static(APP_PATH));

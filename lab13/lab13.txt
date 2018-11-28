@@ -1,0 +1,13 @@
+a. What benefit did using the React Router bring to the application?
+
+React Router allows our application to simulate having different webpages accessible by URLs.
+
+b. Which is better, hash history or browser history?
+
+Hash history is an older work-around for legacy browsers that didn't support the HTML5 history API; it uses hashes in the URL to properly track history.
+Browser history is the standard implementation of history that accesses the browsers history through an API, allowing for cleaner URLs.
+
+c. Why does the server (either Webpack Dev Server or the Express server) have to be modified to support the browser history? Compare this with the hash-based server demonstrated in class, which didn't require such modifications.
+
+The server is configured to only serve the package on the root URL: '/'. However, if a user try to refresh the page when any route, the GET request to the server will not be resolved.
+To fix this issue, a wildcard is used to catch another other GET requests and simply serves up the static files again.

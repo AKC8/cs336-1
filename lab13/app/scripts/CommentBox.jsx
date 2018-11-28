@@ -45,7 +45,10 @@ export const CommentBox = React.createClass({
   },
   componentDidMount: function() {
     this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, POLL_INTERVAL);
+    this.pollingInterval = setInterval(this.loadCommentsFromServer, POLL_INTERVAL);
+  },
+  componentWillUnmount: function() {
+    clearInterval(this.pollingInterval);
   },
   render: function() {
     return (
