@@ -98,11 +98,18 @@ app.get('/api/comments/:id', function(req, res) {
       console.error(err);
       process.exit(1);
     }
+    res.sendStatus(200);
   });
 })
 .delete('/api/comments/:id', function(req, res) {
   db.collection('comments').remove({
     _id: new mongo.ObjectID(req.params.id)
+  }, function(err, data) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    res.sendStatus(200);
   });
 })
 
