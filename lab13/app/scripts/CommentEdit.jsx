@@ -23,7 +23,8 @@ export const CommentEdit = React.createClass({
             cache: false,
         })
             .done(function (result) {
-                this.setState(result[0]);
+              console.log(result)
+                this.setState(result);
             }.bind(this))
             .fail(function (xhr, status, errorThrown) {
                 console.error(API_URL, status, errorThrown.toString());

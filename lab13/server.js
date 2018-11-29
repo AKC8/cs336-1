@@ -76,8 +76,8 @@ app.post('/api/comments', function(req, res) {
   });
 });
 
-api.get('/api/comments/:id', function(req, res) {
-  db.collection('comments').find({
+app.get('/api/comments/:id', function(req, res) {
+  db.collection('comments').findOne({
     _id: new mongo.ObjectID(req.params.id)
   }, function(err, data) {
     if (err) {
@@ -86,6 +86,24 @@ api.get('/api/comments/:id', function(req, res) {
     }
     res.json(data);
   })
+})
+.put('/api/comments/:id', function(req, res) {
+  db.collection('comments').update({
+    _id: new mongo.ObjectID(req.params.id)
+  },{
+    author: req.body.author,
+    text: req.body.text,
+  }, function(err, data) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  });
+})
+.delete('/api/comments/:id', function(req, res) {
+  db.collection('comments').remove({
+    _id: new mongo.ObjectID(req.params.id)
+  });
 })
 
 app.use('*', express.static(APP_PATH));
